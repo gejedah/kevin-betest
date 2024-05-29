@@ -1,6 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 
-async function mongoCrud() {
+export async function mongoCrud() {
     const uri = 'mongodb://localhost:27017';
     const client = new MongoClient(uri);
 

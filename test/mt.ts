@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { mongoCrud } from './mongoCr';
+import { mongoCrud } from '../mongoCr';
 
 let mongoServer: MongoMemoryServer;
 let client: MongoClient;
