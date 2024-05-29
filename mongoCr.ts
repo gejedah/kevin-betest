@@ -35,4 +35,4 @@ async function mongoCrud() {
     }
 }
 
-main().catch(console.error);
+mongoCrud().catch(console.error);
