@@ -34,5 +34,3 @@ async function mongoCrud() {
         await client.close();
     }
 }
-
-mongoCrud().catch(console.error);
