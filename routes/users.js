@@ -9,10 +9,10 @@ router.get('/', function(req, res, next) {
 });
 router.post('/users/create', createMongoDataController);
 router.get('/users', createMongoDataController);
-router.get('/users/:id', createMongoDataController);
 router.get('/users/account/:number', createMongoDataController);
 router.get('/users/identity/:number', createMongoDataController);
-router.put('/users/update', updateMongoDataController);
-router.delete('/users/remove', createMongoDataController);
+router.get('/users/:id', createMongoDataController);
+router.put('/users/:id/update', updateMongoDataController);
+router.delete('/users/:id/remove', createMongoDataController);
 
 module.exports = router;
