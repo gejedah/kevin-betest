@@ -2,6 +2,7 @@ import { MongoClient } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { createUserData } from '../service/create';
 import { updateUserData } from '../service/update';
+const lodash = require('lodash');
 
 let mongoServer: MongoMemoryServer;
 let client: MongoClient;
@@ -44,13 +45,15 @@ test('Update operation', async () => {
         userName: 'John Doe',
         accountNumber: '1234567890',
         emailAddress: 'kevin97@gmail.com',
-        identityNumber: '123456789113'
+        identityNumber: '345678911356'
     }
-    const newAge = 31;
+    const userName = 'Jane Doe';
     const collection = client.db('mydb').collection('mycollection');
-    await updateUserData(insertedId, { age: newAge });
+    const { insertedId } = await collection.insertOne(document);
+    lodash.assign(document, { userName });
+    await updateUserData(String(insertedId), document);
     const updatedDocument = await collection.findOne({ _id: insertedId });
-    expect(updatedDocument?.age).toBe(newAge);
+    expect(updatedDocument?.userName).toBe(userName);
 });
 
 // test('Delete operation', async () => {
