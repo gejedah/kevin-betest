@@ -5,11 +5,6 @@ import createUserData from '../service/create';
 
 export const createMongoDataController = async (req: Request, res: Response) => {
     try {
-        // Extract the necessary data from the request body
-        const { /* fields */ } = req.body;
-
-        // Validate the data if needed
-
         // Create a new record using the data
         const newRecord = await createUserData(req.body);
 
