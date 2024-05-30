@@ -13,7 +13,7 @@ type payload = {
  * @param payload
  * @returns
  */
-export default async function createUserData(payload: payload): Promise<any> {
+export default async function updateUserData(payload: payload): Promise<any> {
     const uri = 'mongodb://localhost:27017';
     const client = new MongoClient(uri);
 
@@ -23,7 +23,7 @@ export default async function createUserData(payload: payload): Promise<any> {
         const database = client.db('db_kevin_betest');
         const collection = database.collection('Users');
         const result = await collection.insertOne(payload);
-        console.log(`Inserted document with _id`);
+        console.log(`Update document with _id`);
         return result.insertedId;
     } finally {
         await client.close();
