@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from 'mongodb';
-import lodash from 'lodash';
+import * as lodash from 'lodash';
 
 type payload = {
     Id: string,
@@ -17,10 +17,10 @@ type payload = {
 export default async function updateUserData(payload: payload): Promise<any> {
     const uri = 'mongodb://localhost:27017';
     const client = new MongoClient(uri);
-    const { userName,
-        accountNumber,
-        emailAddress,
-        identityNumber } = payload;
+    // const { userName,
+    //     accountNumber,
+    //     emailAddress,
+    //     identityNumber } = payload;
 
     try {
         await client.connect();
