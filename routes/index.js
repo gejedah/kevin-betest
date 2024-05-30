@@ -1,11 +1,9 @@
 var express = require('express');
-const { createMongoDataController } = require('../controller/create');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.post('create', createMongoDataController);
 
 module.exports = router;
