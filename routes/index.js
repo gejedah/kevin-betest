@@ -1,5 +1,4 @@
 var express = require('express');
-const { createMongoDataController } = require('../controller/create');
 var router = express.Router();
 
 /* GET home page. */
