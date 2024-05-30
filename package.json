@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "startt": "node ./dist/app.js",
+    "start35": "ts-node app.ts",
     "start": "node ./bin/www",
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/app.ts",
     "build": "tsc -p ."
@@ -16,7 +18,9 @@
     "lodash": "^4.17.21",
     "mongodb": "^6.6.2",
     "mongodb-memory-server": "^9.2.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
