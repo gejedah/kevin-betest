@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from 'mongodb';
-import * as lodash from 'lodash';
+const lodash = require('lodash');
 
 type payload = {
     userName: string,
