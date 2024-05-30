@@ -5,7 +5,7 @@ import updateUserData from '../service/update';
 
 export const updateMongoDataController = async (req: Request, res: Response) => {
     try {
-        const newRecord = await updateUserData(req.body);
+        const newRecord = await updateUserData(req.params.id, req.body);
         // Return the newly created record as the response
         res.status(200).json(newRecord);
     } catch (error) {
