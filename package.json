@@ -6,7 +6,6 @@
     "startt": "node ./dist/app.js",
     "start35": "ts-node app.ts",
     "start": "node ./bin/www",
-    "dev": "ts-node-dev --respawn --pretty --transpile-only src/app.ts",
     "build": "tsc -p ."
   },
   "dependencies": {

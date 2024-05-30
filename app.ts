@@ -1,7 +1,6 @@
 import express from "express";
-import { HttpError } from "http-errors";
+import { HttpError, CreateHttpError  } from "http-errors";
 
-var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -24,9 +23,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// /**
+//  * Redis Activations
+//  */
+// (async () => {
+//   await setupRedis();
+// })();
+
+
 // catch 404 and forward to error handler
 app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {
-  next(createError(404));
+  next(HttpError('Not Found'));
 });
 
 // error handler
@@ -41,3 +48,11 @@ app.use(function(err: HttpError, req: express.Request, res: express.Response, ne
 });
 
 module.exports = app;
+
+
+/**
+ * Server Activation
+ */
+app.listen(8000, () => {
+  console.log(`Server is running on port: ${8000}`);
+});
