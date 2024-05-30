@@ -2,4 +2,4 @@
 interview test
 ms-kevin-betest
 
-collection Users have unique Id
+collection Users have unique Id, userName, accountNumber, emailAddress, identityNumber
