@@ -10,7 +10,7 @@ export const createMongoDataController = async (req: Request, res: Response) => 
         // Validate the data if needed
 
         // Create a new record using the data
-        const newRecord = await /* Model.create({ /* fields */ }) */;
+        // const newRecord = await /* Model.create({ /* fields */ }) */;
 
         // Return the newly created record as the response
         res.status(201).json(newRecord);
