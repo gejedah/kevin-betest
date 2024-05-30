@@ -26,7 +26,7 @@ test('Create operation', async () => {
         emailAddress: 'kevin97@gmail.com',
         identityNumber: '123456789113'
     }
-    const collection = client.db('mydb').collection('mycollection');
+    const collection = client.db('db_kevin_betest').collection('Users');
     await createUserData(document);
     const foundDocument = await collection.findOne(document);
     expect(foundDocument).toEqual(expect.objectContaining(document));
@@ -34,7 +34,7 @@ test('Create operation', async () => {
 
 // test('Read operation', async () => {
 //     const document = { name: 'John Doe', age: 30 };
-//     const collection = client.db('mydb').collection('mycollection');
+//     const collection = client.db('db_kevin_betest').collection('Users');
 //     const { insertedId } = await collection.insertOne(document);
 //     const foundDocument = await mongoCrud('read', insertedId);
 //     expect(foundDocument).toEqual(expect.objectContaining(document));
@@ -48,7 +48,7 @@ test('Update operation', async () => {
         identityNumber: '345678911356'
     }
     const userName = 'Jane Doe';
-    const collection = client.db('mydb').collection('mycollection');
+    const collection = client.db('db_kevin_betest').collection('Users');
     const { insertedId } = await collection.insertOne(document);
     lodash.assign(document, { userName });
     await updateUserData(String(insertedId), document);
@@ -58,7 +58,7 @@ test('Update operation', async () => {
 
 // test('Delete operation', async () => {
 //     const document = { name: 'John Doe', age: 30 };
-//     const collection = client.db('mydb').collection('mycollection');
+//     const collection = client.db('db_kevin_betest').collection('Users');
 //     const { insertedId } = await collection.insertOne(document);
 //     await mongoCrud('delete', insertedId);
 //     const deletedDocument = await collection.findOne({ _id: insertedId });
