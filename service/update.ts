@@ -14,7 +14,7 @@ type payload = {
  * @param payload
  * @returns
  */
-export default async function updateUserData(id: string, payload: payload): Promise<any> {
+export async function updateUserData(id: string, payload: payload): Promise<any> {
     const uri = 'mongodb://localhost:27017';
     const client = new MongoClient(uri);
     // const { userName,

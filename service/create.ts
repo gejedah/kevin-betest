@@ -12,7 +12,7 @@ type payload = {
  * @param payload
  * @returns
  */
-export default async function createUserData(payload: payload): Promise<any> {
+export async function createUserData(payload: payload): Promise<any> {
     const uri = 'mongodb://localhost:27017';
     const client = new MongoClient(uri);
 
