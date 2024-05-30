@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "startt": "node ./dist/app.js",
-    "start35": "ts-node app.ts",
-    "start": "node ./bin/www",
+    "start": "node ./dist/bin/www",
     "build": "tsc -p ."
   },
   "dependencies": {

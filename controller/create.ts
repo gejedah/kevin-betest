@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import createUserData from '../service/create';
+import { createUserData } from '../service/create';
 
 // Import any necessary models or services
 

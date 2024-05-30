@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import updateUserData from '../service/update';
+import { updateUserData } from '../service/update';
 
 // Import any necessary models or services
 
