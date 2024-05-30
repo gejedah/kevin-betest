@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 // Import any necessary models or services
 
-export const create = async (req: Request, res: Response) => {
+export const createMongoDataController = async (req: Request, res: Response) => {
     try {
         // Extract the necessary data from the request body
         const { /* fields */ } = req.body;
