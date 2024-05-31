@@ -7,7 +7,7 @@ import { updateMongoDataController } from '../controller/update';
 router.get('/', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
-router.post('/users/create', createMongoDataController);
+router.post('/users', createMongoDataController);
 router.get('/users', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
@@ -20,8 +20,8 @@ router.get('/users/identity/:number', function(req: express.Request, res: expres
 router.get('/users/:id', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
-router.put('/users/:id/update', updateMongoDataController);
-router.delete('/users/:id/remove', function(req: express.Request, res: express.Response, next: express.NextFunction) {
+router.put('/users/:id', updateMongoDataController);
+router.delete('/users/:id', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
 
