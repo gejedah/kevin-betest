@@ -3,7 +3,6 @@ var router = express.Router();
 import { createMongoDataController } from '../controller/create';
 import { updateMongoDataController } from '../controller/update';
 
-/* GET users listing. */
 router.get('/', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
