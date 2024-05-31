@@ -7,19 +7,16 @@ import { getUserByIdNumberController } from '../controller/getByIdNumber';
 router.get('/', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
-router.post('/users', createMongoDataController);
-router.get('/users', function(req: express.Request, res: express.Response, next: express.NextFunction) {
+router.post('/', createMongoDataController);
+router.get('/account/:number', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
-router.get('/users/account/:number', function(req: express.Request, res: express.Response, next: express.NextFunction) {
+router.get('/identity/:number', getUserByIdNumberController);
+router.get('/:id', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
-router.get('/users/identity/:number', getUserByIdNumberController);
-router.get('/users/:id', function(req: express.Request, res: express.Response, next: express.NextFunction) {
-  res.send('respond with a resource');
-});
-router.put('/users/:id', updateMongoDataController);
-router.delete('/users/:id', function(req: express.Request, res: express.Response, next: express.NextFunction) {
+router.put('/:id', updateMongoDataController);
+router.delete('/:id', function(req: express.Request, res: express.Response, next: express.NextFunction) {
   res.send('respond with a resource');
 });
 

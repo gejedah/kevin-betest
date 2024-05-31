@@ -1,5 +1,4 @@
 import express from "express";
-import { HttpError, CreateHttpError  } from "http-errors";
 
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -33,11 +32,11 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {
-  next(HttpError('Not Found'));
+  next(new Error('Internal error'));
 });
 
 // error handler
-app.use(function(err: HttpError, req: express.Request, res: express.Response, next: express.NextFunction) {
+app.use(function(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -47,12 +46,13 @@ app.use(function(err: HttpError, req: express.Request, res: express.Response, ne
   res.render('error');
 });
 
+
 module.exports = app;
 
 
-/**
- * Server Activation
- */
-// app.listen(8000, () => {
-  // console.log(`Server is running on port: ${8000}`);
+// /**
+//  * Server Activation
+//  */
+// app.listen(3001, () => {
+//   console.log(`Server is running on port: ${3001}`);
 // });

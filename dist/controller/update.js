@@ -38,18 +38,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateMongoDataController = void 0;
 var update_1 = require("../service/update");
-// Import any necessary models or services
 var updateMongoDataController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var newRecord, error_1;
+    var updateRecord, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, (0, update_1.updateUserData)(req.params.id, req.body)];
             case 1:
-                newRecord = _a.sent();
-                // Return the newly created record as the response
-                res.status(200).json(newRecord);
+                updateRecord = _a.sent();
+                res.status(200).json(updateRecord);
                 return [3 /*break*/, 3];
             case 2:
                 error_1 = _a.sent();

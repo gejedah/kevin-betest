@@ -13,9 +13,9 @@ type payload = {
  * @returns
  */
 export async function createUserData(payload: payload): Promise<any> {
+    console.log('payload', payload);
     const uri = 'mongodb://localhost:27017';
     const client = new MongoClient(uri);
-
     try {
         await client.connect();
 

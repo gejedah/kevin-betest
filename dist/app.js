@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var http_errors_1 = require("http-errors");
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -29,7 +28,7 @@ app.use('/users', usersRouter);
 // })();
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    next((0, http_errors_1.HttpError)('Not Found'));
+    next(new Error('Not Found'));
 });
 // error handler
 app.use(function (err, req, res, next) {
@@ -41,9 +40,9 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 module.exports = app;
-/**
- * Server Activation
- */
-// app.listen(8000, () => {
-// console.log(`Server is running on port: ${8000}`);
+// /**
+//  * Server Activation
+//  */
+// app.listen(3001, () => {
+//   console.log(`Server is running on port: ${3001}`);
 // });

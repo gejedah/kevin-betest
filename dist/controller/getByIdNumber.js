@@ -36,45 +36,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createUserData = void 0;
-var mongodb_1 = require("mongodb");
-/**
- *
- * @param payload
- * @returns
- */
-function createUserData(payload) {
-    return __awaiter(this, void 0, void 0, function () {
-        var uri, client, database, collection, result;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    console.log('payload', payload);
-                    uri = 'mongodb://localhost:27017';
-                    client = new mongodb_1.MongoClient(uri);
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, , 5, 7]);
-                    return [4 /*yield*/, client.connect()];
-                case 2:
-                    _a.sent();
-                    database = client.db('db_kevin_betest');
-                    collection = database.collection('Users');
-                    return [4 /*yield*/, collection.createIndex({ id: 1 }, { unique: true })];
-                case 3:
-                    _a.sent();
-                    return [4 /*yield*/, collection.insertOne(payload)];
-                case 4:
-                    result = _a.sent();
-                    console.log("Inserted document with _id");
-                    return [2 /*return*/, result.insertedId];
-                case 5: return [4 /*yield*/, client.close()];
-                case 6:
-                    _a.sent();
-                    return [7 /*endfinally*/];
-                case 7: return [2 /*return*/];
-            }
-        });
+exports.getUserByIdNumberController = void 0;
+var getUserByIdNumberController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        try {
+            req.params.number;
+            res.status(200).json({ message: 'success' });
+        }
+        catch (error) {
+            // Handle any errors that occur during the create process
+            console.error(error);
+            res.status(500).json({ message: 'Internal Server Error' });
+        }
+        return [2 /*return*/];
     });
-}
-exports.createUserData = createUserData;
+}); };
+exports.getUserByIdNumberController = getUserByIdNumberController;
